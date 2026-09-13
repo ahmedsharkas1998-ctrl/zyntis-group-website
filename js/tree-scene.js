@@ -963,6 +963,13 @@ function toggleFixed() {
   }
 }
 window.addEventListener('scroll', toggleFixed, { passive: true });
+if (window.lenis) {
+  window.lenis.on('scroll', toggleFixed);
+} else {
+  window.addEventListener('load', () => {
+    if (window.lenis) window.lenis.on('scroll', toggleFixed);
+  });
+}
 
 /* =========================================================================
    Animation & Render Loop (with Adaptive DPR & Tree Energy Pulses)
@@ -987,8 +994,6 @@ function tick(now) {
   }
   requestAnimationFrame(tick);
   if (document.hidden) return;
-
-  if (window.lenis) window.lenis.raf(now);
 
   const frameInterval = lastFrame >= 0 ? now - lastFrame : FRAME_MS;
   if (lastFrame >= 0 && frameInterval < FRAME_MS - 0.5) return;

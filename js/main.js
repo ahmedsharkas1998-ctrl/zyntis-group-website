@@ -22,6 +22,13 @@
     });
     lenis.stop(); // Locked during preloader
     window.lenis = lenis;
+
+    // Dedicated continuous requestAnimationFrame loop for Lenis
+    function lenisRaf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(lenisRaf);
+    }
+    requestAnimationFrame(lenisRaf);
   }
 
   // Anchor Links Glide via Lenis
@@ -376,6 +383,7 @@
     sessionStorage.removeItem('pxnav');
 
     document.addEventListener('click', e => {
+      if (e.defaultPrevented) return;
       const a = e.target.closest && e.target.closest('a');
       if (!a) return;
       const href = a.getAttribute('href');
@@ -383,7 +391,9 @@
 
       let url;
       try { url = new URL(a.href, location.href); } catch (_) { return; }
-      if (url.origin !== location.origin || url.pathname === location.pathname) return;
+      
+      const norm = p => p.replace(/\/index\.html$/, '/');
+      if (url.origin !== location.origin || norm(url.pathname) === norm(location.pathname)) return;
 
       e.preventDefault();
       sessionStorage.setItem('pxnav', '1');
