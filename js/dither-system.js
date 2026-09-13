@@ -212,6 +212,7 @@
 
   // Dynamic responsive canvas sizing with dual width & height boundary constraints
   function resize() {
+    recalcSceneBounds();
     DPR = Math.min(window.devicePixelRatio || 1, 2);
     const container = cv.parentNode;
     const cw = container.clientWidth || 580;
@@ -234,19 +235,29 @@
     cv.style.height = H + 'px';
   }
 
+  let sceneTop = 0;
+  let sceneTotalDist = 1;
+  function recalcSceneBounds() {
+    sceneTop = scene.offsetTop;
+    sceneTotalDist = Math.max(1, scene.offsetHeight - window.innerHeight);
+  }
+
   function getScrollProgress() {
-    const rect = scene.getBoundingClientRect();
-    const totalDist = scene.offsetHeight - window.innerHeight;
-    if (totalDist <= 0) return 0;
-    const scrolled = -rect.top;
-    return Math.max(0, Math.min(1, scrolled / totalDist));
+    const scrolled = window.scrollY - sceneTop;
+    return Math.max(0, Math.min(1, scrolled / sceneTotalDist));
   }
 
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
   let animTime = 0;
+  let isVisible = false;
+  let rafId = null;
 
   function render(time) {
-    requestAnimationFrame(render);
+    if (!isVisible) {
+      rafId = null;
+      return;
+    }
+    rafId = requestAnimationFrame(render);
     animTime = time * 0.001;
 
     const progress = getScrollProgress();
@@ -428,9 +439,29 @@
     ctx.globalAlpha = 1.0;
   }
 
+  function setVisible(vis) {
+    isVisible = vis;
+    if (isVisible) {
+      recalcSceneBounds();
+      if (!rafId) {
+        rafId = requestAnimationFrame(render);
+      }
+    } else if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
   window.addEventListener('resize', resize);
-  window.addEventListener('scroll', () => {}, { passive: true });
+  window.addEventListener('load', recalcSceneBounds);
 
   resize();
-  requestAnimationFrame(render);
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(es => {
+      setVisible(es[0].isIntersecting);
+    }, { rootMargin: '240px' }).observe(scene);
+  } else {
+    setVisible(true);
+  }
 })();

@@ -79,6 +79,14 @@ renderer.toneMapping = THREE.NeutralToneMapping;
 renderer.toneMappingExposure = 1.16;
 app.appendChild(renderer.domElement);
 
+renderer.domElement.addEventListener('webglcontextlost', (e) => {
+  e.preventDefault();
+  console.warn('WebGL context lost.');
+}, false);
+renderer.domElement.addEventListener('webglcontextrestored', () => {
+  console.info('WebGL context restored.');
+}, false);
+
 const scene = new THREE.Scene();
 
 // Deep Obsidian Void Backdrop with Controlled Luminous Gold Horizon
@@ -940,13 +948,19 @@ window.addEventListener('load', recalcTops);
 window.addEventListener('resize', recalcTops);
 
 let _fixedShown = true;
+let _tickRunning = true;
 function toggleFixed() {
-  const show = window.scrollY < _capTop;
+  const show = window.scrollY < _capTop + 100;
   if (show === _fixedShown) return;
   _fixedShown = show;
   const d = show ? '' : 'none';
   app.style.display = d;
   if (vignetteEl) vignetteEl.style.display = d;
+  if (show && !_tickRunning) {
+    _tickRunning = true;
+    lastFrame = performance.now();
+    requestAnimationFrame(tick);
+  }
 }
 window.addEventListener('scroll', toggleFixed, { passive: true });
 
@@ -967,6 +981,10 @@ let sparkStartTime = -1;
 const SPARK_DURATION = 620;
 
 function tick(now) {
+  if (!_fixedShown) {
+    _tickRunning = false;
+    return;
+  }
   requestAnimationFrame(tick);
   if (document.hidden) return;
 

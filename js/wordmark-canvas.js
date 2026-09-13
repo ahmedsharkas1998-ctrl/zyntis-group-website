@@ -54,7 +54,9 @@
       }
     }
     resize();
-    loop();
+    if (vis && !rafId) {
+      rafId = requestAnimationFrame(loop);
+    }
   }
 
   let tmx = -9999, tmy = -9999, mx = -9999, my = -9999;
@@ -87,9 +89,23 @@
   window.addEventListener('resize', resize);
 
   let vis = false;
+  let rafId = null;
+
+  function setVisible(v) {
+    vis = v;
+    if (vis) {
+      resize();
+      if (!rafId && cells.length && W) {
+        rafId = requestAnimationFrame(loop);
+      }
+    } else if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
   new IntersectionObserver(es => {
-    vis = es[0].isIntersecting;
-    if (vis) resize();
+    setVisible(es[0].isIntersecting);
   }, { rootMargin: '160px' }).observe(footer);
 
   const GOLD = '#c8a44e';
@@ -99,8 +115,11 @@
 
   const t0 = performance.now();
   function loop() {
-    requestAnimationFrame(loop);
-    if (!vis || !cells.length || !W) return;
+    if (!vis || !cells.length || !W) {
+      rafId = null;
+      return;
+    }
+    rafId = requestAnimationFrame(loop);
 
     const t = (performance.now() - t0) / 1000;
     if (mx < -9000) {

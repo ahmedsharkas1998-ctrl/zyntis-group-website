@@ -5,7 +5,8 @@ Each tile consists of a grid of tiny <rect> elements forming crisp tech iconogra
 import math
 import os
 
-OUTPUT_DIR = r"d:\side job\website dev\zyntis group\assets"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUTPUT_DIR = os.path.join(BASE_DIR, "assets")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 WIDTH, HEIGHT = 600, 600

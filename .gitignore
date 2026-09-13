@@ -3,11 +3,13 @@ superpowers-marketplace/
 screenshots of oxigin/
 antigravity-plugins-official/
 
-# Temporary test profiles and caches
+# Temporary test profiles, scripts and caches
 .edge_*/
 *.log
 test_screens/
 screenshot_live.png
+tools/test_*.py
+tools/inspect_*.py
 
 # System & Editor files
 .DS_Store

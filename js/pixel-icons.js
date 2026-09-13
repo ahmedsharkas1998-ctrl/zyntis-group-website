@@ -368,18 +368,31 @@
     return;
   }
 
-  let visible = true;
-  const sec = document.getElementById('capabilities');
-  if (sec && 'IntersectionObserver' in window) {
-    visible = false;
-    new IntersectionObserver(es => {
-      visible = es[0].isIntersecting;
-    }, { rootMargin: '140px' }).observe(sec);
+  let visible = false;
+  let rafId = null;
+
+  function loop() {
+    draw(performance.now() / 1000);
+    rafId = requestAnimationFrame(loop);
   }
 
-  (function loop() {
-    if (visible) draw(performance.now() / 1000);
-    requestAnimationFrame(loop);
-  })();
+  function setVisible(vis) {
+    visible = vis;
+    if (visible && !rafId) {
+      rafId = requestAnimationFrame(loop);
+    } else if (!visible && rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  const sec = document.getElementById('capabilities');
+  if (sec && 'IntersectionObserver' in window) {
+    new IntersectionObserver(es => {
+      setVisible(es[0].isIntersecting);
+    }, { rootMargin: '140px' }).observe(sec);
+  } else {
+    setVisible(true);
+  }
 })();
 

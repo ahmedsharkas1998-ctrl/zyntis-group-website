@@ -5,18 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zyntis Group — AI Consultancy &amp; Operational Systems</title>
   <meta name="description" content="Zyntis Group engineers AI directly into everyday business operations. We build, automate, and integrate intelligent websites, AI agents, CRMs, and connected systems." />
+  <link rel="canonical" href="https://zyntisgroup.com/" />
   
   <!-- Favicon & Brand Icons -->
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zyntisgroup.com/">
   <meta property="og:site_name" content="Zyntis Group">
   <meta property="og:title" content="Zyntis Group — Turn AI Into Business Infrastructure">
   <meta property="og:description" content="We leverage modern AI to design, automate, and connect the systems your business relies on every day.">
+  <meta property="og:image" content="https://zyntisgroup.com/assets/logo.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Zyntis Group — AI Consultancy &amp; Implementation">
+  <meta name="twitter:description" content="We leverage modern AI to design, automate, and connect the systems your business relies on every day.">
+  <meta name="twitter:image" content="https://zyntisgroup.com/assets/logo.svg">
   
+  <!-- Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Zyntis Group",
+    "url": "https://zyntisgroup.com",
+    "logo": "https://zyntisgroup.com/assets/logo.svg",
+    "description": "Zyntis Group engineers AI directly into everyday business operations — connecting intelligent systems, automating manual workflows, and engineering operational leverage.",
+    "email": "info@zyntisgroup.com",
+    "priceRange": "$$$$"
+  }
+  </script>
+
   <!-- Typography Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +44,13 @@
   <!-- Master Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
   
+  <!-- Page Transition State Restore -->
+  <script>
+    if (sessionStorage.getItem('pxnav') === '1') {
+      document.documentElement.classList.add('px-cover');
+    }
+  </script>
+
   <!-- Lenis Smooth Scroll -->
   <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 
@@ -39,6 +65,9 @@
   </script>
 </head>
 <body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#story" class="skip-link">Skip to main content</a>
 
   <!-- Preloader Screen -->
   <div id="loader" aria-label="Loading Zyntis Group">
@@ -57,7 +86,7 @@
 
   <!-- Primary Navigation -->
   <nav class="navbar" aria-label="Primary">
-    <a class="brand" href="/" aria-label="Zyntis Group">
+    <a class="brand" href="index.html" aria-label="Zyntis Group">
       <svg class="brand-logo" viewBox="6 5 339 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g class="zyntis-mark" transform="translate(2, 8)">
           <path d="M10 4L42 4L18 40L50 40" stroke="#c8a44e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />

@@ -5,14 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact &amp; AI Consultation — Zyntis Group</title>
   <meta name="description" content="Schedule an AI strategy consultation with Zyntis Group. Tell us what workflows you want to automate and we'll return with a clear architectural roadmap." />
+  <link rel="canonical" href="https://zyntisgroup.com/contact.html" />
   
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zyntisgroup.com/contact.html">
+  <meta property="og:site_name" content="Zyntis Group">
+  <meta property="og:title" content="Contact &amp; AI Strategy Consultation — Zyntis Group">
+  <meta property="og:description" content="Schedule an AI strategy consultation with Zyntis Group. Tell us what workflows you want to automate and we'll return with a clear architectural roadmap.">
+  <meta property="og:image" content="https://zyntisgroup.com/assets/logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact &amp; AI Strategy Consultation — Zyntis Group">
+  <meta name="twitter:description" content="Schedule an AI strategy consultation with Zyntis Group.">
+  <meta name="twitter:image" content="https://zyntisgroup.com/assets/logo.svg">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Zyntis Group",
+    "url": "https://zyntisgroup.com/contact.html",
+    "description": "Schedule an AI strategy consultation with Zyntis Group.",
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Zyntis Group",
+      "email": "info@zyntisgroup.com",
+      "url": "https://zyntisgroup.com"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Page Transition State Restore -->
+  <script>
+    if (sessionStorage.getItem('pxnav') === '1') {
+      document.documentElement.classList.add('px-cover');
+    }
+  </script>
   
   <style>
     /* Contact Page Specific Styles */
@@ -190,9 +227,12 @@
 </head>
 <body>
 
+  <!-- Accessible Skip Link -->
+  <a href="#main-contact" class="skip-link">Skip to main content</a>
+
   <!-- Primary Navigation -->
   <nav class="navbar scrolled" aria-label="Primary">
-    <a class="brand" href="/" aria-label="Zyntis Group">
+    <a class="brand" href="index.html" aria-label="Zyntis Group">
       <svg class="brand-logo" viewBox="6 5 339 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g class="zyntis-mark" transform="translate(2, 8)">
           <path d="M10 4L42 4L18 40L50 40" stroke="#c8a44e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
@@ -212,11 +252,11 @@
     </a>
     
     <div class="nav-links">
-      <a class="nav-btn" href="/#approach">Approach</a>
-      <a class="nav-btn" href="/#capabilities">Capabilities</a>
-      <a class="nav-btn" href="/#systems">What We Build</a>
-      <a class="nav-btn" href="/#system-architecture">The System</a>
-      <a class="nav-btn" href="/#insights">Insights</a>
+      <a class="nav-btn" href="index.html#approach">Approach</a>
+      <a class="nav-btn" href="index.html#capabilities">Capabilities</a>
+      <a class="nav-btn" href="index.html#systems">What We Build</a>
+      <a class="nav-btn" href="index.html#system-architecture">The System</a>
+      <a class="nav-btn" href="index.html#insights">Insights</a>
     </div>
 
     <a class="nav-cta" href="mailto:info@zyntisgroup.com">
@@ -231,7 +271,7 @@
   </nav>
 
   <!-- Main Contact Stage -->
-  <main class="contact-page">
+  <main id="main-contact" class="contact-page">
     <div class="ct-inner">
       <span class="ct-eyebrow"><span class="eyebrow-dot"></span> Strategic Consultation</span>
       <h1 class="ct-title">Start an AI implementation.</h1>
@@ -257,23 +297,23 @@
       <form class="ct-form" id="ct-form">
         <div class="ct-field">
           <label for="ct-name">Full Name</label>
-          <input id="ct-name" name="name" type="text" placeholder="e.g. Alexander Reed" required />
+          <input id="ct-name" name="name" type="text" autocomplete="name" placeholder="e.g. Alexander Reed" required />
         </div>
 
         <div class="ct-field">
           <label for="ct-email">Work Email</label>
-          <input id="ct-email" name="email" type="email" placeholder="alexander@company.com" required />
+          <input id="ct-email" name="email" type="email" autocomplete="email" placeholder="alexander@company.com" required />
         </div>
 
         <div class="ct-field">
           <label for="ct-company">Company &amp; Domain</label>
-          <input id="ct-company" name="company" type="text" placeholder="Company Name / website.com" required />
+          <input id="ct-company" name="company" type="text" autocomplete="organization" placeholder="Company Name / website.com" required />
         </div>
 
         <div class="ct-field">
           <label for="ct-focus">Primary Objective</label>
           <select id="ct-focus" name="focus">
-            <option value="AI Agents &amp; Voice/Chat Assistants">AI Agents &amp; Autonomous Assistants</option>
+            <option value="AI Agents &amp; Autonomous Assistants">AI Agents &amp; Autonomous Assistants</option>
             <option value="Workflow &amp; Lead Pipeline Automation">End-to-End Workflow &amp; Lead Automation</option>
             <option value="AI-Powered Website &amp; Inbound Systems">AI-Powered Website &amp; Inbound Lead Engine</option>
             <option value="CRM &amp; Calendar Integration">CRM, Calendar &amp; Multi-tool Synchronization</option>
@@ -287,10 +327,11 @@
           <textarea id="ct-msg" name="message" placeholder="Briefly describe what your team spends time doing manually, which software tools you currently use, or what you want your AI system to accomplish." required></textarea>
         </div>
 
-        <button type="submit" class="ct-submit">
+        <button type="submit" class="ct-submit" id="ct-btn">
           Submit Strategy Request <span class="arw" aria-hidden="true">&rarr;</span>
         </button>
         <p class="ct-note">This initiates your intake directly with our senior AI engineering team.</p>
+        <div id="ct-status" role="status" aria-live="polite" style="grid-column: 1 / -1; display: none; color: var(--gold-light); font-family: var(--mono); font-size: 13px; margin-top: 10px;"></div>
       </form>
     </div>
   </main>
@@ -302,7 +343,7 @@
         The clearest way to understand what AI can do for your business is to put a real workflow in front of us.
       </h2>
       <div class="ft-cta">
-        <a class="ft-btn" href="/">
+        <a class="ft-btn" href="index.html">
           &larr; Return to Home Overview
         </a>
       </div>
@@ -319,11 +360,11 @@
 
       <div class="ft-col">
         <span class="ft-label">Navigate</span>
-        <a href="/#approach">Approach</a>
-        <a href="/#capabilities">Capabilities</a>
-        <a href="/#systems">What We Build</a>
-        <a href="/#system-architecture">The System</a>
-        <a href="/#insights">Insights</a>
+        <a href="index.html#approach">Approach</a>
+        <a href="index.html#capabilities">Capabilities</a>
+        <a href="index.html#systems">What We Build</a>
+        <a href="index.html#system-architecture">The System</a>
+        <a href="index.html#insights">Insights</a>
       </div>
 
       <div class="ft-col">
@@ -354,14 +395,32 @@
 
   <script src="js/wordmark-canvas.js"></script>
   <script>
-    // Form submission handler
+    // Form submission handler with user feedback
     const form = document.getElementById('ct-form');
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         const g = id => (document.getElementById(id) || {}).value || '';
+        const status = document.getElementById('ct-status');
+        const submitBtn = document.getElementById('ct-btn');
+        if (status) {
+          status.style.display = 'block';
+          status.textContent = 'Preparing intake... Opening your email client with pre-filled details.';
+        }
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.7';
+        }
         const body = `Name: ${g('ct-name')}\nEmail: ${g('ct-email')}\nCompany: ${g('ct-company')}\nObjective: ${g('ct-focus')}\n\nProblem / Workflow:\n${g('ct-msg')}`;
-        window.location.href = `mailto:info@zyntisgroup.com?subject=${encodeURIComponent('AI Strategy Inquiry — ' + g('ct-name') + ' (' + g('ct-company') + ')')}&body=${encodeURIComponent(body)}`;
+        setTimeout(() => {
+          window.location.href = `mailto:info@zyntisgroup.com?subject=${encodeURIComponent('AI Strategy Inquiry — ' + g('ct-name') + ' (' + g('ct-company') + ')')}&body=${encodeURIComponent(body)}`;
+          setTimeout(() => {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.style.opacity = '';
+            }
+          }, 2000);
+        }, 300);
       });
     }
 
