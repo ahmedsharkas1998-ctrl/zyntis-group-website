@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 5 339 60" fill="none" class="zyntis-logo">
+  <!-- Monogram Z-G Emblem -->
+  <g class="zyntis-mark" transform="translate(2, 8)">
+    <!-- Circuit node connections -->
+    <path d="M10 4L42 4L18 40L50 40" stroke="#c8a44e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M38 20L48 20C54 20 59 24.5 59 30.5C59 36.5 54 41 48 41L34 41" stroke="#e8c65a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+    <!-- Glowing core nodes -->
+    <circle cx="10" cy="4" r="3" fill="#ffffff" />
+    <circle cx="42" cy="4" r="3" fill="#c8a44e" />
+    <circle cx="18" cy="40" r="3" fill="#c8a44e" />
+    <circle cx="50" cy="40" r="3" fill="#ffffff" />
+    <circle cx="59" cy="30.5" r="2.2" fill="#e8c65a" />
+  </g>
+
+  <!-- Cohesive Typography -->
+  <g class="zyntis-text" transform="translate(76, 0)">
+    <text x="0" y="38" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="30" letter-spacing="0.08em" fill="#f5f3ee">ZYNTIS</text>
+    <text x="136" y="38" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-weight="400" font-size="30" letter-spacing="0.10em" fill="#c8a44e">GROUP</text>
+    <text x="2" y="58" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="11.5" letter-spacing="0.25em" fill="#dfc070">AI SYSTEMS &amp; INFRASTRUCTURE</text>
+  </g>
+</svg>

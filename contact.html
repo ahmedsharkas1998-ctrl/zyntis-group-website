@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; AI Consultation — Zyntis Group</title>
+  <meta name="description" content="Schedule an AI strategy consultation with Zyntis Group. Tell us what workflows you want to automate and we'll return with a clear architectural roadmap." />
+  
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Contact Page Specific Styles */
+    .contact-page {
+      background: var(--bg-deep);
+      color: var(--light);
+      padding: clamp(120px, 18vh, 190px) 6.5vw clamp(80px, 12vh, 140px);
+      min-height: 100vh;
+    }
+
+    .ct-inner {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .ct-eyebrow {
+      font: 600 0.74rem/1 var(--mono);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 1.4rem;
+    }
+
+    .ct-title {
+      font-family: var(--sans);
+      font-weight: 700;
+      color: var(--ink);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.04;
+      letter-spacing: -0.024em;
+    }
+
+    .ct-dek {
+      font: 400 clamp(1.05rem, 1.5vw, 1.28rem)/1.6 var(--serif);
+      color: var(--soft);
+      max-width: 52ch;
+      margin-top: 1.2rem;
+    }
+
+    .ct-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin: clamp(40px, 6vh, 74px) 0;
+      padding: clamp(26px, 3.4vh, 36px) 0;
+      border-top: 1px solid rgba(200, 164, 78, 0.2);
+      border-bottom: 1px solid rgba(200, 164, 78, 0.2);
+    }
+
+    .ct-info .lbl {
+      display: block;
+      font: 600 0.68rem/1 var(--mono);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 0.7rem;
+    }
+
+    .ct-info .val {
+      font: 500 clamp(1rem, 1.2vw, 1.15rem)/1.4 var(--sans);
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .ct-info a.val {
+      border-bottom: 1px solid rgba(200, 164, 78, 0.3);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .ct-info a.val:hover {
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    .ct-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 24px;
+    }
+
+    .ct-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .ct-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .ct-field label {
+      font: 600 0.68rem/1 var(--mono);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .ct-field input,
+    .ct-field select,
+    .ct-field textarea {
+      font: 400 1rem/1.5 var(--sans);
+      color: var(--ink);
+      background: var(--bg-card);
+      border: 1px solid rgba(232, 230, 225, 0.14);
+      padding: 14px 16px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ct-field input::placeholder,
+    .ct-field textarea::placeholder {
+      color: var(--quiet);
+    }
+
+    .ct-field input:focus,
+    .ct-field select:focus,
+    .ct-field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(200, 164, 78, 0.18);
+    }
+
+    .ct-field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .ct-submit {
+      grid-column: 1 / -1;
+      justify-self: start;
+      margin-top: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--gold);
+      color: var(--bg-deep);
+      font: 600 0.95rem/1 var(--sans);
+      padding: 1.15rem 2.2rem;
+      border: 0;
+      cursor: pointer;
+      transition: background 0.25s ease, transform 0.2s, box-shadow 0.25s;
+    }
+
+    .ct-submit:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 164, 78, 0.35);
+    }
+
+    .ct-submit .arw {
+      transition: transform 0.25s ease;
+      color: var(--bg-deep);
+    }
+
+    .ct-submit:hover .arw {
+      transform: translateX(4px);
+    }
+
+    .ct-note {
+      grid-column: 1 / -1;
+      font: 400 0.82rem/1.5 var(--mono);
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .ct-form { grid-template-columns: 1fr; }
+      .ct-info { grid-template-columns: 1fr; gap: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Primary Navigation -->
+  <nav class="navbar scrolled" aria-label="Primary">
+    <a class="brand" href="/" aria-label="Zyntis Group">
+      <svg class="brand-logo" viewBox="6 5 339 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g class="zyntis-mark" transform="translate(2, 8)">
+          <path d="M10 4L42 4L18 40L50 40" stroke="#c8a44e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M38 20L48 20C54 20 59 24.5 59 30.5C59 36.5 54 41 48 41L34 41" stroke="#e8c65a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+          <circle cx="10" cy="4" r="3" fill="#ffffff" />
+          <circle cx="42" cy="4" r="3" fill="#c8a44e" />
+          <circle cx="18" cy="40" r="3" fill="#c8a44e" />
+          <circle cx="50" cy="40" r="3" fill="#ffffff" />
+          <circle cx="59" cy="30.5" r="2.2" fill="#e8c65a" />
+        </g>
+        <g class="zyntis-text" transform="translate(76, 0)">
+          <text x="0" y="38" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="30" letter-spacing="0.08em" fill="#f5f3ee">ZYNTIS</text>
+          <text x="136" y="38" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-weight="400" font-size="30" letter-spacing="0.10em" fill="#c8a44e">GROUP</text>
+          <text x="2" y="58" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="11.5" letter-spacing="0.25em" fill="#dfc070">AI SYSTEMS &amp; INFRASTRUCTURE</text>
+        </g>
+      </svg>
+    </a>
+    
+    <div class="nav-links">
+      <a class="nav-btn" href="/#approach">Approach</a>
+      <a class="nav-btn" href="/#capabilities">Capabilities</a>
+      <a class="nav-btn" href="/#systems">What We Build</a>
+      <a class="nav-btn" href="/#system-architecture">The System</a>
+      <a class="nav-btn" href="/#insights">Insights</a>
+    </div>
+
+    <a class="nav-cta" href="mailto:info@zyntisgroup.com">
+      info@zyntisgroup.com
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Main Contact Stage -->
+  <main class="contact-page">
+    <div class="ct-inner">
+      <span class="ct-eyebrow"><span class="eyebrow-dot"></span> Strategic Consultation</span>
+      <h1 class="ct-title">Start an AI implementation.</h1>
+      <p class="ct-dek">
+        Tell us what business workflows, software tools, or operational bottlenecks you want to improve, and we'll come back with how we'd architect and automate it &mdash; not a generic sales pitch.
+      </p>
+
+      <div class="ct-info">
+        <div>
+          <span class="lbl">Primary Focus</span>
+          <span class="val">AI Agents &amp; Connected Workflows</span>
+        </div>
+        <div>
+          <span class="lbl">Direct Inquiries</span>
+          <a class="val" href="mailto:info@zyntisgroup.com">info@zyntisgroup.com</a>
+        </div>
+        <div>
+          <span class="lbl">Turnaround</span>
+          <span class="val">Within 1 business day</span>
+        </div>
+      </div>
+
+      <form class="ct-form" id="ct-form">
+        <div class="ct-field">
+          <label for="ct-name">Full Name</label>
+          <input id="ct-name" name="name" type="text" placeholder="e.g. Alexander Reed" required />
+        </div>
+
+        <div class="ct-field">
+          <label for="ct-email">Work Email</label>
+          <input id="ct-email" name="email" type="email" placeholder="alexander@company.com" required />
+        </div>
+
+        <div class="ct-field">
+          <label for="ct-company">Company &amp; Domain</label>
+          <input id="ct-company" name="company" type="text" placeholder="Company Name / website.com" required />
+        </div>
+
+        <div class="ct-field">
+          <label for="ct-focus">Primary Objective</label>
+          <select id="ct-focus" name="focus">
+            <option value="AI Agents &amp; Voice/Chat Assistants">AI Agents &amp; Autonomous Assistants</option>
+            <option value="Workflow &amp; Lead Pipeline Automation">End-to-End Workflow &amp; Lead Automation</option>
+            <option value="AI-Powered Website &amp; Inbound Systems">AI-Powered Website &amp; Inbound Lead Engine</option>
+            <option value="CRM &amp; Calendar Integration">CRM, Calendar &amp; Multi-tool Synchronization</option>
+            <option value="Custom Internal Software / SaaS MVP">Custom Operational Software / SaaS MVP</option>
+            <option value="Full Comprehensive AI Strategy Audit">Comprehensive Enterprise AI Audit</option>
+          </select>
+        </div>
+
+        <div class="ct-field full">
+          <label for="ct-msg">What operational bottlenecks or workflows are you trying to solve?</label>
+          <textarea id="ct-msg" name="message" placeholder="Briefly describe what your team spends time doing manually, which software tools you currently use, or what you want your AI system to accomplish." required></textarea>
+        </div>
+
+        <button type="submit" class="ct-submit">
+          Submit Strategy Request <span class="arw" aria-hidden="true">&rarr;</span>
+        </button>
+        <p class="ct-note">This initiates your intake directly with our senior AI engineering team.</p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Closing Footer -->
+  <footer id="footer">
+    <div class="ft-top">
+      <h2 class="ft-headline">
+        The clearest way to understand what AI can do for your business is to put a real workflow in front of us.
+      </h2>
+      <div class="ft-cta">
+        <a class="ft-btn" href="/">
+          &larr; Return to Home Overview
+        </a>
+      </div>
+    </div>
+
+    <hr class="ft-rule">
+
+    <div class="ft-cols">
+      <div class="ft-col">
+        <span class="ft-label">Zyntis Group</span>
+        <p class="ft-brand">Applied AI and connected systems for modern enterprise.</p>
+        <p class="ft-note">Engineered for leverage, by design.</p>
+      </div>
+
+      <div class="ft-col">
+        <span class="ft-label">Navigate</span>
+        <a href="/#approach">Approach</a>
+        <a href="/#capabilities">Capabilities</a>
+        <a href="/#systems">What We Build</a>
+        <a href="/#system-architecture">The System</a>
+        <a href="/#insights">Insights</a>
+      </div>
+
+      <div class="ft-col">
+        <span class="ft-label">Contact</span>
+        <a href="mailto:info@zyntisgroup.com">info@zyntisgroup.com</a>
+        <span class="ft-muted">Global Operations &middot; Remote Worldwide</span>
+      </div>
+    </div>
+
+    <div class="ft-brandmark">
+      <div class="ft-word" role="img" aria-label="Zyntis Group">
+        <canvas id="ft-vox" class="ft-vox" aria-hidden="true"></canvas>
+      </div>
+      <hr class="ft-rule2">
+      <div class="ft-legal">
+        <span class="ft-copy">&copy; 2026 Zyntis Group. All rights reserved.</span>
+        <span class="ft-dot" aria-hidden="true">&nbsp;&middot;&nbsp;</span>
+        <span class="ft-made">Domain: <a href="https://zyntisgroup.com">zyntisgroup.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Transition Overlay -->
+  <div id="px-tx" aria-hidden="true">
+    <div class="px-panel px-p1"></div>
+    <div class="px-panel px-p2"></div>
+  </div>
+
+  <script src="js/wordmark-canvas.js"></script>
+  <script>
+    // Form submission handler
+    const form = document.getElementById('ct-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const g = id => (document.getElementById(id) || {}).value || '';
+        const body = `Name: ${g('ct-name')}\nEmail: ${g('ct-email')}\nCompany: ${g('ct-company')}\nObjective: ${g('ct-focus')}\n\nProblem / Workflow:\n${g('ct-msg')}`;
+        window.location.href = `mailto:info@zyntisgroup.com?subject=${encodeURIComponent('AI Strategy Inquiry — ' + g('ct-name') + ' (' + g('ct-company') + ')')}&body=${encodeURIComponent(body)}`;
+      });
+    }
+
+    // Mobile nav toggle
+    const nav = document.querySelector('.navbar');
+    const tog = document.querySelector('.nav-toggle');
+    if (nav && tog) {
+      tog.addEventListener('click', e => {
+        e.stopPropagation();
+        const open = nav.classList.toggle('menu-open');
+        tog.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('click', e => {
+        if (nav.classList.contains('menu-open') && !nav.contains(e.target)) {
+          nav.classList.remove('menu-open');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

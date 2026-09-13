@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zyntis Group — AI Consultancy &amp; Operational Systems</title>
+  <meta name="description" content="Zyntis Group engineers AI directly into everyday business operations. We build, automate, and integrate intelligent websites, AI agents, CRMs, and connected systems." />
+  
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zyntis Group">
+  <meta property="og:title" content="Zyntis Group — Turn AI Into Business Infrastructure">
+  <meta property="og:description" content="We leverage modern AI to design, automate, and connect the systems your business relies on every day.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zyntis Group — AI Consultancy &amp; Implementation">
+  
+  <!-- Typography Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- Importmap for Three.js and Addons -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.175.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.175.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="loader" aria-label="Loading Zyntis Group">
+    <div class="ld-container">
+      <img src="assets/logo.svg" alt="Zyntis Group" class="ld-logo" />
+      <span class="ld-status">Initializing Systems</span>
+    </div>
+  </div>
+
+
+  <!-- 3D WebGL Canvas Layer (Fixed) -->
+  <div id="app"></div>
+
+  <!-- Vignette Overlay for Text Legibility -->
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- Primary Navigation -->
+  <nav class="navbar" aria-label="Primary">
+    <a class="brand" href="/" aria-label="Zyntis Group">
+      <svg class="brand-logo" viewBox="6 5 339 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g class="zyntis-mark" transform="translate(2, 8)">
+          <path d="M10 4L42 4L18 40L50 40" stroke="#c8a44e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M38 20L48 20C54 20 59 24.5 59 30.5C59 36.5 54 41 48 41L34 41" stroke="#e8c65a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+          <circle cx="10" cy="4" r="3" fill="#ffffff" />
+          <circle cx="42" cy="4" r="3" fill="#c8a44e" />
+          <circle cx="18" cy="40" r="3" fill="#c8a44e" />
+          <circle cx="50" cy="40" r="3" fill="#ffffff" />
+          <circle cx="59" cy="30.5" r="2.2" fill="#e8c65a" />
+        </g>
+        <g class="zyntis-text" transform="translate(76, 0)">
+          <text x="0" y="38" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="30" letter-spacing="0.08em" fill="#f5f3ee">ZYNTIS</text>
+          <text x="136" y="38" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-weight="400" font-size="30" letter-spacing="0.10em" fill="#c8a44e">GROUP</text>
+          <text x="2" y="58" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="11.5" letter-spacing="0.25em" fill="#dfc070">AI SYSTEMS &amp; INFRASTRUCTURE</text>
+        </g>
+      </svg>
+    </a>
+    
+    <div class="nav-links">
+      <a class="nav-btn" href="#approach" data-scroll="approach">Approach</a>
+      <a class="nav-btn" href="#capabilities" data-scroll="capabilities">Capabilities</a>
+      <a class="nav-btn" href="#systems" data-scroll="systems">What We Build</a>
+      <a class="nav-btn" href="#system-architecture" data-scroll="system-architecture">The System</a>
+      <a class="nav-btn" href="#insights" data-scroll="insights">Insights</a>
+    </div>
+
+    <a class="nav-cta" href="contact.html">
+      Book Strategy Call <span class="arw" aria-hidden="true">&rarr;</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Vertical Section Rail (Desktop right edge) -->
+  <nav class="side-nav" aria-label="Sections">
+    <a class="side-link" href="#approach" data-scroll="approach"><span class="side-label">Approach</span><span class="side-line"></span></a>
+    <a class="side-link" href="#capabilities" data-scroll="capabilities"><span class="side-label">Capabilities</span><span class="side-line"></span></a>
+    <a class="side-link" href="#systems" data-scroll="systems"><span class="side-label">What We Build</span><span class="side-line"></span></a>
+    <a class="side-link" href="#system-architecture" data-scroll="system-architecture"><span class="side-label">The System</span><span class="side-line"></span></a>
+    <a class="side-link" href="#insights" data-scroll="insights"><span class="side-label">Insights</span><span class="side-line"></span></a>
+  </nav>
+
+  <!-- Scroll Cue Indicator -->
+  <div id="cue" aria-hidden="true">
+    <span>Scroll to Explore</span>
+    <div class="bar"></div>
+  </div>
+
+  <!-- -----------------------------------------------------------------------
+       STORY LAYER (Chapters Overlaid on 3D Tree)
+       ----------------------------------------------------------------------- -->
+  <main id="story">
+
+    <!-- Chapter 0: Hero -->
+    <section class="chapter hero-chapter" data-wp="0">
+      <div class="chapter-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> AI Consultancy &amp; Implementation</span>
+        <h1 aria-label="AI, Engineered Into Your Business.">
+          <span class="tw-text" aria-hidden="true">AI, Engineered Into<br>Your Business.</span>
+          <span class="zy-caret" aria-hidden="true"></span>
+        </h1>
+        <p class="sub">
+          We don't simply deploy disconnected AI tools. We redesign how your business operates — connecting intelligent systems, automating manual workflows, and engineering operational leverage that scales.
+        </p>
+        <a class="cta-zyntis" href="contact.html">
+          Schedule AI Consultation <span class="arw" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Chapter 1: The Problem -->
+    <section class="chapter" data-wp="1">
+      <div class="chapter-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> The Operational Bottleneck</span>
+        <h1 aria-label="Your business runs on disconnected systems.">
+          <span class="tw-text" aria-hidden="true">Your business runs on<br>disconnected systems.</span>
+          <span class="zy-caret" aria-hidden="true"></span>
+        </h1>
+        <p class="sub">
+          Most companies already buy AI — models, subscriptions, and chatbots are everywhere. What's scarce is the connective tissue: the website that doesn't qualify leads, the CRM that doesn't sync with the calendar, the agent that leaves follow-ups stranded.
+        </p>
+        <p class="sub">
+          Zyntis Group closes that gap. We engineer AI into the actual workflows your business runs on — and make them work as one unified system.
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter 2: Our Philosophy (Cascading Typewriter) -->
+    <section class="chapter" data-wp="2">
+      <div class="chapter-copy beliefs-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Our Philosophy</span>
+        <div class="beliefs">
+          <div class="belief">
+            <span class="b-claim">AI is the leverage, not the product.</span>
+            <span class="b-text">The models are commodities. Where you apply them, how they integrate, and who operates them is the whole competitive difference.</span>
+          </div>
+          <div class="belief">
+            <span class="b-claim">A chatbot that doesn't connect is a dead end.</span>
+            <span class="b-text">If your AI cannot check availability, qualify criteria, update the CRM, and trigger workflow actions, it is a demo, not infrastructure.</span>
+          </div>
+          <div class="belief">
+            <span class="b-claim">The expensive mistakes happen before the first line of code.</span>
+            <span class="b-text">Most failed initiatives solved the wrong problem with high precision. We diagnose the friction and business constraints first.</span>
+          </div>
+          <div class="belief">
+            <span class="b-claim">Your system should run without us.</span>
+            <span class="b-text">The measure of a successful implementation is an organization that possesses, commands, and extends its own operational leverage.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 3: Step 01 Diagnose -->
+    <section id="approach" class="chapter" data-wp="3">
+      <div class="chapter-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Operational Method</span>
+        <span class="step-num">01 / DIAGNOSE</span>
+        <h2 class="step-title">Audit the Friction.</h2>
+        <p class="sub">
+          Before any software enters the conversation, we map your business workflows: where leads drop off, where administrative friction burns team hours, and where automation delivers measurable operational margin.
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter 4: Step 02 Architect -->
+    <section class="chapter" data-wp="4">
+      <div class="chapter-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Operational Method</span>
+        <span class="step-num">02 / ARCHITECT</span>
+        <h2 class="step-title">Design the System.</h2>
+        <p class="sub">
+          We architect the complete technical roadmap: which AI agents, data integrations, CRM pipelines, and custom software layers connect together. Clear recommendations with the reasoning and ROI shown upfront.
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter 5: Step 03 Deploy -->
+    <section class="chapter" data-wp="5">
+      <div class="chapter-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Operational Method</span>
+        <span class="step-num">03 / DEPLOY</span>
+        <h2 class="step-title">Build &amp; Automate.</h2>
+        <p class="sub">
+          We implement the ecosystem alongside your operations — AI websites, conversational agents, multi-step automations, and custom applications — engineered to withstand production conditions without breakdown.
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter 6: Step 04 Integrate -->
+    <section class="chapter" data-wp="6">
+      <div class="chapter-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Operational Method</span>
+        <span class="step-num">04 / INTEGRATE</span>
+        <h2 class="step-title">Connect &amp; Transfer.</h2>
+        <p class="sub">
+          We wire every component into an autonomous loop: your inbound platform syncs with your CRM, your agent books meetings, your automations trigger fulfillment. We leave your team in full ownership.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- -----------------------------------------------------------------------
+       SECTION 8: CAPABILITIES (Horizontal Accordion Cards)
+       ----------------------------------------------------------------------- -->
+  <section id="capabilities">
+    <div class="cap-head">
+      <span class="eyebrow">Enterprise Capabilities</span>
+      <h2 class="cap-title" aria-label="Intelligent systems, engineered and owned by your team.">
+        <span class="tw-text" aria-hidden="true"><span class="ink">Intelligent systems,</span><br><span class="mut">engineered and owned by your team.</span></span>
+      </h2>
+      <a class="cap-cta" href="contact.html">
+        Explore All Capabilities <span class="arw" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+
+    <div class="cap-cards">
+      <!-- Card 1: AI Strategy & Agents -->
+      <article class="cap-card">
+        <div class="cap-card-top">
+          <span class="cap-num">01</span>
+          <span class="cap-tag">Agents &amp; Core</span>
+        </div>
+        <div class="cap-icon">
+          <canvas class="cap-canvas" data-fn="f01" aria-hidden="true"></canvas>
+        </div>
+        <div class="cap-content">
+          <h3 class="cap-name">AI Strategy &amp; Agents</h3>
+          <div class="cap-detail">
+            <span class="cap-rule"></span>
+            <p class="cap-desc">Autonomous AI receptionists, customer support agents, and lead-qualification assistants that understand context, make decisions, and execute real tasks.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Automation & Workflows -->
+      <article class="cap-card">
+        <div class="cap-card-top">
+          <span class="cap-num">02</span>
+          <span class="cap-tag">Pipelines</span>
+        </div>
+        <div class="cap-icon">
+          <canvas class="cap-canvas" data-fn="f02" aria-hidden="true"></canvas>
+        </div>
+        <div class="cap-content">
+          <h3 class="cap-name">Automation &amp; Workflows</h3>
+          <div class="cap-detail">
+            <span class="cap-rule"></span>
+            <p class="cap-desc">End-to-end operational pipelines: lead capture &rarr; instant qualification &rarr; CRM routing &rarr; calendar scheduling &rarr; notifications &rarr; follow-up sequences.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: AI Websites & Lead Systems -->
+      <article class="cap-card">
+        <div class="cap-card-top">
+          <span class="cap-num">03</span>
+          <span class="cap-tag">Inbound</span>
+        </div>
+        <div class="cap-icon">
+          <canvas class="cap-canvas" data-fn="f03" aria-hidden="true"></canvas>
+        </div>
+        <div class="cap-content">
+          <h3 class="cap-name">AI Websites &amp; Lead Systems</h3>
+          <div class="cap-detail">
+            <span class="cap-rule"></span>
+            <p class="cap-desc">High-performance digital platforms engineered not as static brochures, but as active operational hubs with integrated forms, CRM sync, and automated calendar dispatch.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Custom Software & Integrations -->
+      <article class="cap-card">
+        <div class="cap-card-top">
+          <span class="cap-num">04</span>
+          <span class="cap-tag">Infrastructure</span>
+        </div>
+        <div class="cap-icon">
+          <canvas class="cap-canvas" data-fn="f04" aria-hidden="true"></canvas>
+        </div>
+        <div class="cap-content">
+          <h3 class="cap-name">Custom Software &amp; SaaS</h3>
+          <div class="cap-detail">
+            <span class="cap-rule"></span>
+            <p class="cap-desc">Internal business applications, executive dashboards, API bridges, and rapid SaaS products built with AI velocity to solve unique operational bottlenecks.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- -----------------------------------------------------------------------
+       SECTION 9: WHAT WE BUILD (Connected Systems Showcase & Dithered Tiles)
+       ----------------------------------------------------------------------- -->
+  <section id="systems">
+    <div class="systems-inner">
+      <div class="sy-top">
+        <div class="sy-head">
+          <span class="eyebrow">Connected Infrastructure</span>
+          <h2 class="sy-title" aria-label="Systems that capture, connect, and automate — from end to end.">
+            <span class="tw-text" aria-hidden="true"><span class="mut">Systems that</span> <span class="ink">capture, connect,</span><br><span class="ink">and automate</span> <span class="mut">— from end to end.</span></span>
+          </h2>
+          <p class="sy-lede">
+            Every Zyntis Group implementation begins with a business bottleneck and concludes with an integrated ecosystem. We do not deliver isolated software; we deploy unified infrastructure that compounds operational leverage.
+          </p>
+          <a class="sy-btn" href="contact.html">
+            Request System Demonstration <span class="arw" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Interactive Dithered Tiles with Vortex Swirl -->
+        <div class="sy-tiles" aria-hidden="true">
+          <div class="sy-slot sy-slot-1"><canvas class="sy-tile" data-src="assets/tile-agent.svg" data-rot="-5"></canvas></div>
+          <div class="sy-slot sy-slot-2"><canvas class="sy-tile" data-src="assets/tile-workflow.svg" data-rot="4"></canvas></div>
+          <div class="sy-slot sy-slot-3"><canvas class="sy-tile" data-src="assets/tile-system.svg" data-rot="-3"></canvas></div>
+        </div>
+      </div>
+
+      <div class="sy-bottom">
+        <p class="sy-big">
+          <span class="ink">Engineered for your workflows,</span> <span class="mut">connected for speed, and compounded for the decade ahead.</span>
+        </p>
+        <p class="sy-side">
+          AI implementation framework engineered to eliminate manual administrative friction and turn every touchpoint into an automated asset.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- -----------------------------------------------------------------------
+       SECTION 10: THE SYSTEM (Sticky Scroll-Developed Architecture Diagram)
+       ----------------------------------------------------------------------- -->
+  <section id="system-architecture" class="px-scene">
+    <div class="px-stage">
+      <div class="px-text">
+        <p class="px-role">THE SYSTEM</p>
+        <h2 class="px-name-big">Interconnected Business Infrastructure</h2>
+        <p class="px-bio">
+          This is what a Zyntis Group deployment looks like in production. Your inbound channels, conversational AI agents, CRM pipelines, calendar scheduling, and backend automations orchestrated into a unified operational loop.
+        </p>
+        <p class="px-bio" style="margin-top: 1rem;">
+          When a lead arrives, the agent qualifies intent, updates the CRM records, checks live calendar availability, and coordinates follow-ups — operating autonomously around the clock with zero manual latency.
+        </p>
+      </div>
+      <div class="px-portrait">
+        <canvas id="px-cv" aria-hidden="true"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- -----------------------------------------------------------------------
+       SECTION 11: INSIGHTS & STRATEGY (3-Column Full-Bleed Panels)
+       ----------------------------------------------------------------------- -->
+  <section id="insights">
+    <div class="rs-head">
+      <span class="eyebrow">Strategic Perspectives</span>
+      <h2 class="rs-title" aria-label="Applied AI frameworks for forward-thinking leadership.">
+        <span class="tw-text" aria-hidden="true">Applied AI frameworks for forward-thinking leadership.</span>
+      </h2>
+    </div>
+
+    <div class="rs-panels">
+      <!-- Panel 1: Gold Accent -->
+      <a class="rs-panel rs-accent" href="contact.html">
+        <div class="rs-top">
+          <div class="rs-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="24" cy="24" r="18" />
+              <path d="M24 14v10l7 4" />
+            </svg>
+          </div>
+          <span class="rs-num">01 / PLAYBOOK</span>
+        </div>
+        <div class="rs-body">
+          <h3 class="rs-name">The AI Leverage Playbook</h3>
+          <p class="rs-desc">Why identifying high-friction business operations yields 10x more ROI than buying generic off-the-shelf AI subscriptions.</p>
+          <span class="rs-go">Read Perspective <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Panel 2: Obsidian Dark -->
+      <a class="rs-panel rs-dark" href="contact.html">
+        <div class="rs-top">
+          <div class="rs-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="8" y="8" width="14" height="14" />
+              <rect x="26" y="8" width="14" height="14" />
+              <rect x="8" y="26" width="14" height="14" />
+              <rect x="26" y="26" width="14" height="14" />
+            </svg>
+          </div>
+          <span class="rs-num">02 / ARCHITECTURE</span>
+        </div>
+        <div class="rs-body">
+          <h3 class="rs-name">The Connected Enterprise</h3>
+          <p class="rs-desc">How integrating your website, CRM, and calendar into a live data loop eliminates 90% of customer response latency.</p>
+          <span class="rs-go">Read Perspective <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+
+      <!-- Panel 3: Warm Light -->
+      <a class="rs-panel rs-light" href="contact.html">
+        <div class="rs-top">
+          <div class="rs-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 24h24M24 12v24" />
+              <circle cx="24" cy="24" r="20" />
+            </svg>
+          </div>
+          <span class="rs-num">03 / AGENTS</span>
+        </div>
+        <div class="rs-body">
+          <h3 class="rs-name">From Chatbots to Agents</h3>
+          <p class="rs-desc">Moving past text boxes: how modern agentic AI coordinates multi-step workflows, qualifies prospects, and executes transactions.</p>
+          <span class="rs-go">Read Perspective <span class="arw">&rarr;</span></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- -----------------------------------------------------------------------
+       CLOSING FOOTER (Deep Obsidian & Interactive Wordmark)
+       ----------------------------------------------------------------------- -->
+  <footer id="footer">
+    <div class="ft-top">
+      <h2 class="ft-headline">
+        The clearest way to understand what AI can do for your business is to put a real workflow in front of us.
+      </h2>
+      <div class="ft-cta">
+        <a class="ft-btn" href="contact.html">
+          Book an AI Strategy Session <span class="arw" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <hr class="ft-rule">
+
+    <div class="ft-cols">
+      <div class="ft-col">
+        <span class="ft-label">Zyntis Group</span>
+        <p class="ft-brand">Applied AI and connected systems for growing organizations.</p>
+        <p class="ft-note">Engineered for leverage, by design.</p>
+      </div>
+
+      <div class="ft-col">
+        <span class="ft-label">Navigate</span>
+        <a href="#approach" data-scroll="approach">Approach</a>
+        <a href="#capabilities" data-scroll="capabilities">Capabilities</a>
+        <a href="#systems" data-scroll="systems">What We Build</a>
+        <a href="#system-architecture" data-scroll="system-architecture">The System</a>
+        <a href="#insights" data-scroll="insights">Insights</a>
+      </div>
+
+      <div class="ft-col">
+        <span class="ft-label">Contact</span>
+        <a href="mailto:info@zyntisgroup.com">info@zyntisgroup.com</a>
+        <a href="contact.html">Schedule Call</a>
+        <span class="ft-muted">Global Operations &middot; Remote Worldwide</span>
+      </div>
+    </div>
+
+    <!-- Giant Interactive Wordmark Canvas -->
+    <div class="ft-brandmark">
+      <div class="ft-word" role="img" aria-label="Zyntis Group">
+        <canvas id="ft-vox" class="ft-vox" aria-hidden="true"></canvas>
+      </div>
+      <hr class="ft-rule2">
+      <div class="ft-legal">
+        <span class="ft-copy">&copy; 2026 Zyntis Group. All rights reserved.</span>
+        <span class="ft-dot" aria-hidden="true">&nbsp;&middot;&nbsp;</span>
+        <span class="ft-made">Domain: <a href="https://zyntisgroup.com">zyntisgroup.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Transition Wipe Overlay -->
+  <div id="px-tx" aria-hidden="true">
+    <div class="px-panel px-p1"></div>
+    <div class="px-panel px-p2"></div>
+  </div>
+
+  <!-- Client-side Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/pixel-icons.js"></script>
+  <script src="js/interactive-tiles.js"></script>
+  <script src="js/dither-system.js"></script>
+  <script src="js/wordmark-canvas.js"></script>
+  <script type="module" src="js/tree-scene.js"></script>
+
+</body>
+</html>

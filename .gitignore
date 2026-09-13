@@ -1,0 +1,16 @@
+# Excluded directories per instructions
+superpowers-marketplace/
+screenshots of oxigin/
+antigravity-plugins-official/
+
+# Temporary test profiles and caches
+.edge_*/
+*.log
+test_screens/
+screenshot_live.png
+
+# System & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
